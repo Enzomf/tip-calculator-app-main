@@ -11,6 +11,7 @@ body {
     height: 100vh;
     box-sizing: border-box;
     font-family: "Space Mono", monospace;
+   
 }
 
 @font-face {
@@ -19,11 +20,42 @@ body {
 }
 
 
+.ativo {
+
+    border-radius: 5px;
+   
+    font-weight: 700;
+    font-size: 20px;
+    font-family: "Space Mono", monospace;
+
+    background-color: hsl(185, 41%, 84%);
+    border: hsl(185, 41%, 84%) solid 1px;
+    color: hsl(183, 100%, 15%);
+}
+
+.isZero {
+
+    box-sizing: border-box;
+    font-weight: 700;
+    text-align: right;
+    font-size: 24px;
+    width: 100%;
+    padding: 10px;
+    background: url("/tip-calculator-app-main-main/images/icon-person.svg") no-repeat center left+15px;
+    background-color: hsl(189, 41%, 97%);
+    border: red solid 1px;
+    border-radius: 2px;
+    color: hsl(183, 100%, 15%);
+    font-family: "Space Mono", monospace;
+    appearance: none;
+    
+}
 
 
-@media screen and (min-width:451px){
 
-    #container{
+@media screen and (min-width:701px) {
+
+    #container {
         width: 100%;
         height: 100vh;
         display: flex;
@@ -33,9 +65,10 @@ body {
     }
 
     header {
-        margin: 25px;
+        margin:60px;
     }
-    main{
+
+    main {
         width: 50%;
         background: hsl(0, 0%, 100%);
         padding: 20px;
@@ -43,7 +76,7 @@ body {
         display: flex;
         border-radius: 15px;
         justify-content: space-between;
-        min-width: 600px;
+        min-width: 700px;
         padding: 35px;
     }
 
@@ -57,7 +90,7 @@ body {
     }
 
     input#bill {
-        
+
         box-sizing: border-box;
         font-weight: 700;
         text-align: right;
@@ -67,28 +100,28 @@ body {
         background: url("/tip-calculator-app-main-main/images/icon-dollar.svg") no-repeat center left+20px;
         background-color: hsl(189, 41%, 97%);
         border: none;
-        border-radius: 2px;
+        border-radius: 5px;
         color: hsl(183, 100%, 15%);
-        
+
     }
-    
+
     input:focus {
         outline: hsl(183, 100%, 15%) solid 1.5px;
     }
-    
+
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
     }
-    
+
     .title {
         color: hsl(0, 0%, 100%);
         font-weight: 700;
         display: inline;
         font-size: 14px;
     }
-    
+
     p.subTitle {
         color: hsl(189, 41%, 97%);
         font-size: 12px;
@@ -96,19 +129,13 @@ body {
         display: inline;
         margin: 0;
         opacity: 0.5;
-    
+
     }
-    
-    
-    input#bill::placeholder {
-        color: hsl(183, 100%, 15%);
-        font-weight: 700;
-        font-size: 24px;
-        
-    }
-    
-    
-    
+
+
+
+
+
     #tip {
         display: block;
         margin-bottom: 10px;
@@ -142,7 +169,7 @@ body {
         font-family: "Space Mono", monospace;
     }
 
-    .buttonTip:hover{
+    .buttonTip:hover {
         background-color: hsl(185, 41%, 84%);
         border: hsl(185, 41%, 84%) solid 1px;
         color: hsl(183, 100%, 15%);
@@ -191,10 +218,10 @@ body {
     #result {
         width: 100%;
         background-color: hsl(183, 100%, 15%);
-        height: 40vh;
+        height: 380px;
         border: solid hsl(183, 100%, 15%) 1px;
         border-radius: 14px;
-   
+
         box-sizing: border-box;
         padding-top: 45px;
         padding-left: 30px;
@@ -237,6 +264,7 @@ body {
         line-height: 40px;
         border-radius: 5px;
         cursor: pointer;
+        margin-top: 60px;
     }
 
     #cabecalho {
@@ -250,7 +278,20 @@ body {
         color: rgb(235, 37, 37);
         display: none;
     }
+
+    #buttonReset:hover {
+        color: hsl(183, 100%, 15%);
+        font-weight: 700;
+        font-size: 18px;
+        background-color: hsl(185, 41%, 84%);
+        border: solid 1px hsl(185, 41%, 84%);
+        width: 100%;
+        line-height: 40px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
     
+
 
 
 }
@@ -260,29 +301,29 @@ body {
 
 
 
-@media screen and (max-width: 450px) {
-    
-    
+@media screen and (max-width: 700px) {
+
+
     #container {
-        
+
         width: 100%;
         height: 100%;
         display: grid;
         grid-template-rows: 25vh 75vh;
         grid-template-areas: "header""main";
-        transform: 1s;
+        transform: 7s;
     }
-    
-    
+
+
     header {
         background: hsl(185, 41%, 84%);
         display: flex;
         align-items: center;
         justify-content: center;
-        
+
     }
-    
-    
+
+
     main {
         background-color: hsl(0, 0%, 100%);
         height: 1000px;
@@ -291,8 +332,8 @@ body {
         padding-right: 35px;
         padding-left: 35px;
     }
-    
-    
+
+
     label[for="bill"] {
         display: block;
         margin-bottom: 10px;
@@ -300,14 +341,14 @@ body {
         font-weight: 700;
         color: hsl(186, 14%, 43%);
     }
-    
-    
+
+
     footer {
         display: none;
     }
-    
+
     input#bill {
-        
+
         box-sizing: border-box;
         font-weight: 700;
         text-align: right;
@@ -319,27 +360,27 @@ body {
         border: none;
         border-radius: 2px;
         color: hsl(183, 100%, 15%);
-        
+
     }
-    
-    
+
+
     input:focus {
         outline: hsl(183, 100%, 15%) solid 1.5px;
     }
-    
+
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
     }
-    
+
     .title {
         color: hsl(0, 0%, 100%);
         font-weight: 700;
         display: inline;
         font-size: 14px;
     }
-    
+
     p.subTitle {
         color: hsl(189, 41%, 97%);
         font-size: 12px;
@@ -347,19 +388,19 @@ body {
         display: inline;
         margin: 0;
         opacity: 0.5;
-    
+
     }
-    
-    
+
+
     input#bill::placeholder {
         color: hsl(183, 100%, 15%);
         font-weight: 700;
         font-size: 24px;
-        
+
     }
-    
-    
-    
+
+
+
     #tip {
         display: block;
         margin-bottom: 10px;
@@ -447,7 +488,7 @@ body {
         display: grid;
         grid-template-rows: 80px 100px 200px;
         grid-template-areas: "amount""total""reset";
-
+       
     }
 
     #tipAmount {
@@ -483,6 +524,19 @@ body {
         border-radius: 5px;
         cursor: pointer;
     }
+
+    #buttonReset:hover {
+        color: hsl(183, 100%, 15%);
+        font-weight: 700;
+        font-size: 18px;
+        background-color: hsl(185, 41%, 84%);
+        border: solid 1px hsl(185, 41%, 84%);
+        width: 100%;
+        line-height: 40px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
 
     #cabecalho {
         margin-top: 25px;
