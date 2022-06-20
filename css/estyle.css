@@ -1,3 +1,7 @@
+* {
+    font-family: "Space Mono", monospace;
+}
+
 html,
 body {
     margin: 0;
@@ -17,39 +21,30 @@ body {
 
 
 
+@media screen and (min-width:451px){
 
-
-
-
-@media screen and (max-width: 450px) {
-
-
-    #container {
-
+    #container{
         width: 100%;
-        height: 100%;
-        display: grid;
-        grid-template-rows: 25vh 75vh;
-        grid-template-areas: "header""main";
-        transform: 1s;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
-
 
     header {
-        background: hsl(185, 41%, 84%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
+        margin: 25px;
     }
-
-
-    main {
-        background-color: hsl(0, 0%, 100%);
-        border-radius: 20px 20px 0 0;
-        padding-top: 25px;
-        padding-right: 35px;
-        padding-left: 35px;
+    main{
+        width: 50%;
+        background: hsl(0, 0%, 100%);
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        border-radius: 15px;
+        justify-content: space-between;
+        min-width: 600px;
+        padding: 35px;
     }
 
 
@@ -61,31 +56,310 @@ body {
         color: hsl(186, 14%, 43%);
     }
 
-
-    footer {
-        display: none;
+    input#bill {
+        
+        box-sizing: border-box;
+        font-weight: 700;
+        text-align: right;
+        font-size: 24px;
+        width: 90%;
+        padding: 10px;
+        background: url("/tip-calculator-app-main-main/images/icon-dollar.svg") no-repeat center left+20px;
+        background-color: hsl(189, 41%, 97%);
+        border: none;
+        border-radius: 2px;
+        color: hsl(183, 100%, 15%);
+        
+    }
+    
+    input:focus {
+        outline: hsl(183, 100%, 15%) solid 1.5px;
+    }
+    
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    
+    .title {
+        color: hsl(0, 0%, 100%);
+        font-weight: 700;
+        display: inline;
+        font-size: 14px;
+    }
+    
+    p.subTitle {
+        color: hsl(189, 41%, 97%);
+        font-size: 12px;
+        font-weight: 700;
+        display: inline;
+        margin: 0;
+        opacity: 0.5;
+    
+    }
+    
+    
+    input#bill::placeholder {
+        color: hsl(183, 100%, 15%);
+        font-weight: 700;
+        font-size: 24px;
+        
+    }
+    
+    
+    
+    #tip {
+        display: block;
+        margin-bottom: 10px;
+        margin-right: 40px;
+        font-size: 16px;
+        font-weight: 700;
+        color: hsl(183, 100%, 15%);
     }
 
-    input#bill {
 
+
+    #tipButtonArea {
+
+        box-sizing: border-box;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 2fr 2fr 2fr;
+        grid-template-rows: 7vh 7vh;
+        grid-gap: 10px;
+
+
+    }
+
+    .buttonTip {
+        border-radius: 5px;
+        background: hsl(183, 100%, 15%);
+        border: hsl(183, 100%, 15%) solid 1px;
+        color: hsl(0, 0%, 100%);
+        font-weight: 700;
+        font-size: 20px;
+        font-family: "Space Mono", monospace;
+    }
+
+    .buttonTip:hover{
+        background-color: hsl(185, 41%, 84%);
+        border: hsl(185, 41%, 84%) solid 1px;
+        color: hsl(183, 100%, 15%);
+    }
+
+    input#customTip {
+        width: 98%;
+        border-radius: 5px;
+        background-color: hsl(185, 41%, 84%);
+        text-align: center;
+        border: none;
+        font-family: "Space Mono", monospace;
+        appearance: none;
+        color: hsl(183, 100%, 15%);
+        font-weight: 700;
+        font-size: 24px;
+    }
+
+
+    #customTip::placeholder {
+
+        text-align: center;
+        font-weight: 700;
+        color: hsl(183, 100%, 15%);
+        font-size: 20px;
+    }
+
+
+    #nPeople {
         box-sizing: border-box;
         font-weight: 700;
         text-align: right;
         font-size: 24px;
         width: 100%;
         padding: 10px;
-        background: url("/images/icon-dollar.png") no-repeat center left+20px;
+        background: url("/tip-calculator-app-main-main/images/icon-person.svg") no-repeat center left+15px;
         background-color: hsl(189, 41%, 97%);
         border: none;
-        border-radius: 8px;
+        border-radius: 2px;
         color: hsl(183, 100%, 15%);
+        font-family: "Space Mono", monospace;
+        appearance: none;
+    }
+
+
+    #result {
+        width: 100%;
+        background-color: hsl(183, 100%, 15%);
+        height: 40vh;
+        border: solid hsl(183, 100%, 15%) 1px;
+        border-radius: 14px;
+   
+        box-sizing: border-box;
+        padding-top: 45px;
+        padding-left: 30px;
+        padding-right: 30px;
+        display: grid;
+        grid-template-rows: 80px 100px 200px;
+        grid-template-areas: "amount""total""reset";
 
     }
 
-    input#bill:focus {
-        outline: none;
+    #tipAmount {
+        grid-area: amount;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
     }
 
+    #Total {
+        grid-area: total;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    h1 {
+
+        font-size: 40px;
+        margin: 0;
+        color: hsl(172, 67%, 45%);
+    }
+
+    #buttonReset {
+        color: hsl(183, 100%, 15%);
+        font-weight: 700;
+        font-size: 18px;
+        background-color: hsl(172, 67%, 45%);
+        border: solid 1px hsl(172, 67%, 45%);
+        width: 100%;
+        line-height: 40px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #cabecalho {
+        margin-top: 25px;
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #zero {
+        color: rgb(235, 37, 37);
+        display: none;
+    }
+    
+
+
+}
+
+
+
+
+
+
+@media screen and (max-width: 450px) {
+    
+    
+    #container {
+        
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-rows: 25vh 75vh;
+        grid-template-areas: "header""main";
+        transform: 1s;
+    }
+    
+    
+    header {
+        background: hsl(185, 41%, 84%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    
+    
+    main {
+        background-color: hsl(0, 0%, 100%);
+        height: 1000px;
+        border-radius: 20px 20px 0 0;
+        padding-top: 25px;
+        padding-right: 35px;
+        padding-left: 35px;
+    }
+    
+    
+    label[for="bill"] {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 16px;
+        font-weight: 700;
+        color: hsl(186, 14%, 43%);
+    }
+    
+    
+    footer {
+        display: none;
+    }
+    
+    input#bill {
+        
+        box-sizing: border-box;
+        font-weight: 700;
+        text-align: right;
+        font-size: 24px;
+        width: 100%;
+        padding: 10px;
+        background: url("/tip-calculator-app-main-main/images/icon-dollar.svg") no-repeat center left+20px;
+        background-color: hsl(189, 41%, 97%);
+        border: none;
+        border-radius: 2px;
+        color: hsl(183, 100%, 15%);
+        
+    }
+    
+    
+    input:focus {
+        outline: hsl(183, 100%, 15%) solid 1.5px;
+    }
+    
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    
+    .title {
+        color: hsl(0, 0%, 100%);
+        font-weight: 700;
+        display: inline;
+        font-size: 14px;
+    }
+    
+    p.subTitle {
+        color: hsl(189, 41%, 97%);
+        font-size: 12px;
+        font-weight: 700;
+        display: inline;
+        margin: 0;
+        opacity: 0.5;
+    
+    }
+    
+    
+    input#bill::placeholder {
+        color: hsl(183, 100%, 15%);
+        font-weight: 700;
+        font-size: 24px;
+        
+    }
+    
+    
+    
     #tip {
         display: block;
         margin-bottom: 10px;
@@ -100,7 +374,7 @@ body {
 
         box-sizing: border-box;
         width: 100%;
-      
+
         display: grid;
         grid-template-columns: 2fr 2fr;
         grid-template-rows: 8vh 8vh 8vh;
@@ -124,15 +398,17 @@ body {
         border-radius: 5px;
         background-color: hsl(185, 41%, 84%);
         text-align: center;
-        border:none;
+        border: none;
         font-family: "Space Mono", monospace;
+        appearance: none;
+        color: hsl(183, 100%, 15%);
+        font-weight: 700;
+        font-size: 24px;
     }
-    
-    input#customTip:focus{
-        border: hsl(183, 100%, 15%) solid 1px;
-    }
-    #customTip::placeholder{
-       
+
+
+    #customTip::placeholder {
+
         text-align: center;
         font-weight: 700;
         color: hsl(183, 100%, 15%);
@@ -140,8 +416,85 @@ body {
     }
 
 
+    #nPeople {
+        box-sizing: border-box;
+        font-weight: 700;
+        text-align: right;
+        font-size: 24px;
+        width: 100%;
+        padding: 10px;
+        background: url("/tip-calculator-app-main-main/images/icon-person.svg") no-repeat center left+15px;
+        background-color: hsl(189, 41%, 97%);
+        border: none;
+        border-radius: 2px;
+        color: hsl(183, 100%, 15%);
+        font-family: "Space Mono", monospace;
+        appearance: none;
+    }
 
 
+    #result {
+        width: 100%;
+        background-color: hsl(183, 100%, 15%);
+        height: 40vh;
+        border: solid hsl(183, 100%, 15%) 1px;
+        border-radius: 14px;
+        margin-top: 40px;
+        box-sizing: border-box;
+        padding-top: 45px;
+        padding-left: 30px;
+        padding-right: 30px;
+        display: grid;
+        grid-template-rows: 80px 100px 200px;
+        grid-template-areas: "amount""total""reset";
+
+    }
+
+    #tipAmount {
+        grid-area: amount;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #Total {
+        grid-area: total;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    h1 {
+
+        font-size: 40px;
+        margin: 0;
+        color: hsl(172, 67%, 45%);
+    }
+
+    #buttonReset {
+        color: hsl(183, 100%, 15%);
+        font-weight: 700;
+        font-size: 18px;
+        background-color: hsl(172, 67%, 45%);
+        border: solid 1px hsl(172, 67%, 45%);
+        width: 100%;
+        line-height: 40px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #cabecalho {
+        margin-top: 25px;
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #zero {
+        color: rgb(235, 37, 37);
+        display: none;
+    }
 
 
 }
